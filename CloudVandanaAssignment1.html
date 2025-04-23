@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Profile Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+    }
+
+    .profile-card {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 350px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #2575fc;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .designation {
+      font-size: 1rem;
+      color: #777;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .social-icons a {
+      color: #2575fc;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #6a11cb;
+    }
+
+    @media (max-width: 400px) {
+      .profile-card {
+        padding: 1.5rem;
+      }
+
+      .name {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-img" />
+    <div class="name">Alex Morgan</div>
+    <div class="designation">Web Developer</div>
+    <div class="bio">Passionate about creating beautiful, user-friendly websites and applications.</div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <a href="#"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</body>
+</html>
