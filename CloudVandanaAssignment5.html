@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Slider</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    img {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .slider-buttons {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Image Slider</h2>
+  <img id="sliderImage" src="" alt="Image Slider" />
+  
+  <div class="slider-buttons">
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+  </div>
+
+  <script>
+    const images = [
+      "https://via.placeholder.com/400x250/ff7f7f/333333?text=Image+1",
+      "https://via.placeholder.com/400x250/7fbfff/333333?text=Image+2",
+      "https://via.placeholder.com/400x250/7fff7f/333333?text=Image+3"
+    ];
+
+    let currentIndex = 0;
+
+    function showImage(index) {
+      const img = document.getElementById("sliderImage");
+      img.src = images[index];
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    // Show the first image on load
+    window.onload = function() {
+      showImage(currentIndex);
+    };
+  </script>
+
+</body>
+</html>
